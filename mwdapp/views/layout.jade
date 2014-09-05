@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/jquery.mobile-1.4.2.css')
+    link(rel='stylesheet', href='/stylesheets/animate.css')
+    script(src='/javascripts/jquery-2.1.0.js')
+    script(src='/javascripts/jquery.mobile-1.4.2.js')
+    script(src='/javascripts/main.js')
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  body(class="ui-mobile-viewport ui-overlay-c")
+    div(data-role='page')
+      block body
+
+      div(data-role='content',class='ui-content')
+        block content
+        
+      div(data-role='footer',class='ui-header ui-bar-a')
+        h4= "David Kirwan 00346128"

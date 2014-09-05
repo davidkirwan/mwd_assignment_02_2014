@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+/*
+David Kirwan 00346128
+MSc Communication Software 2014
+Mobile Application Development
+*/
+
+
+var debug = require('debug')('my-application');
+var app = require('../app');
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+});

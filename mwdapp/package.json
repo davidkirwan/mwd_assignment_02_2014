@@ -1,0 +1,42 @@
+{
+  "name": "mwd-2014-assignment-02-dkirwan",
+  "preferGlobal": false,
+  "version": "0.0.1",
+  "author": "David Kirwan <dkirwan@tssg.org>",
+  "description": "A scalable online service delivered through a cross platform app",
+  "contributors": [
+    {
+      "name": "David Kirwan",
+      "email": "dkirwan@tssg.org"
+    }
+  ],
+  "scripts": {
+    "start": "node bin/www",
+    "test": "vows --spec --isolate",
+    "predeploy": "echo This will be run before deploying the app",
+    "postdeploy": "echo This will be run after deploying the app"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0",
+    "cookies": "~0.4.0",
+    "konphyg": "~1.4.0"
+  },
+  "keywords": [
+    "server"
+  ],
+  "analyze": false,
+  "devDependencies": {
+    "vows": "0.5.x",
+    "request": "2.1.x"
+  },
+  "license": "GPL 3.0",
+  "engines": {
+    "node": ">=0.10"
+  }
+}

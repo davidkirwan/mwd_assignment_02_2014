@@ -1,0 +1,36 @@
+extends layout
+
+block body
+  div(data-role='header',class='ui-header ui-bar-b')
+    h1 MWD 2014 Github App
+    if(data != null && typeof data.cookie == 'undefined')
+      a(onclick='beginAuth();', data-icon='grid', style='height:15px') Authenticate
+    else
+      a(href="#popupDialog", data-rel="popup", data-position-to="window", data-transition="pop", data-icon='grid', style='height:15px', title='Logout') #{data.user.login}
+        div(data-role="popup", id="popupDialog", data-overlay-theme="b", data-theme="b", data-dismissible="false", style="max-width:400px;")
+          div(data-role="header", data-theme="a")
+            h1 Logout
+          div(role="main" class="ui-content")
+            h3(class="ui-title") Are you sure you want to logout?
+            p Choose a response from the buttons below
+            a(href="#", class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b", data-rel="back") Cancel
+            a(href="#", onclick='beginLogout();', class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b", data-transition="flow") Logout
+
+block content
+  a(href='/', data-role="button", data-icon="carat-l", data-transition='fade') Home
+  
+  div(class='ui-grid-a')
+    div(class='ui-block-a')
+      div
+        img(id="map", src='http://staticmap.openstreetmap.de/staticmap.php?center=42.120376479978,-0.78125000196516&zoom=1&size=500x350',style='width:100%;height=100%;')
+    div(class='ui-grid-b')
+      div(id='index-content')
+        h1 User Information
+        h3= "Name: " + data.user.name
+        h3= "Login: " + data.user.login
+        h3= "Email: " + data.user.email
+        h3= "Company: " + data.user.company
+        h3= "Location: " + data.user.location
+        h3= "IP: " + data.ip
+  script
+    $( document ).on( "pagecreate", dropPin);

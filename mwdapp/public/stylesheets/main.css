@@ -1,0 +1,17 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#index-content {
+	margin-left: 20px;
+}
+
+.starred {
+	position: relative;
+	width: 20px;
+    height: 20px;
+}
